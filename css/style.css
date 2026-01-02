@@ -770,6 +770,45 @@ body::after {
   inset-inline-end: -6.25rem;
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #896836;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .3s;
+}
+
+.preloader._hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader__icon {
+  width: 40vmin;
+  height: 40vmin;
+  color: white;
+}
+
+.preloader__path {
+  animation: spin .8s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .lg-outer .lg-thumb-item.active {
   border-color: #c1b081 !important;
 }
